@@ -9,6 +9,8 @@
     <!-- Bootstrap CSS file -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+
+
     
 
     
@@ -32,8 +34,7 @@
         <div class="col-sm-2">
             Enter Number 1 :  
         </div>
-         <div class=" col-sm-6">
- 
+         <div class="col-sm-6">
             <input type="number" id="num2" placeholder="Enter Number 1" value="0">
          </div>
      </div>
@@ -56,12 +57,24 @@
 
 
      <div class="row">
-        <div class="col-sm-3">
-            Enter Operation(*,-,^,%,/,+) : 
+        <div class="col-sm-2">
+            <label>Choose Operation : </label> 
         </div>
         <div class="col-sm-4">
-            <input id="operation"  type="text"  placeholder="Enter operation(*,-,^,%,/,+)">
+
+     <select id="Operator">
+         <option value="*">*</option>
+         <option value="-">-</option>
+         <option value="+">+</option>
+         <option value="/">/</option>
+         <option value="*">*</option>
+         <option value="^">^</option>
+
+     </select>
+
+     
         </div>
+
          
      </div>
 
@@ -86,6 +99,12 @@
 
      <br><br>
      <p id="error" ></p>
+
+     
+         
+     </div>
+     
+
  </div>
 
 
