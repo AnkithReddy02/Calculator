@@ -47,7 +47,7 @@ function result()
 		return;
 	}
 
-	document.getElementById('error').innerHTML =  "";
+	document.getElementById('error').innerHTML =  "Perfect!";
 
 
 	var result = document.getElementById('result');
