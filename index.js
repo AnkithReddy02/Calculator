@@ -44,7 +44,10 @@ function result()
 	else
 	{
 		document.getElementById('error').innerHTML =  "Enter proper values and operations.";
+		return;
 	}
+
+	document.getElementById('error').innerHTML =  "";
 
 
 	var result = document.getElementById('result');
