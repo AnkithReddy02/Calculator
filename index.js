@@ -6,7 +6,7 @@ function result()
 	var num1 = parseFloat(list[0].value);
 	var num2 = parseFloat(list[1].value);
 	
-	var operation = (list[2].value);
+	var operation = (document.getElementById('Operator').value);
 
 	//console.log(operation);
 
