@@ -1,61 +1,89 @@
-function result()
+var result = document.getElementById('result');
+
+	result.style.width = "150px";
+function finalResult()
 {
-	
+
+	var classList = document.querySelector('button').classList;
+
+	classList.remove("btn-success");
+	classList.remove("btn-danger");
+
+
 	var list = document.getElementsByTagName('input');
 
 	var num1 = parseFloat(list[0].value);
 	var num2 = parseFloat(list[1].value);
 	
-	var operation = (document.getElementById('Operator').value);
+	var operation = document.getElementById("Operator").value;
 
-	//console.log(operation);
+	//document.querySelector("#resultButton").innerHTML="Result";
 
-	var value = 0;
+	//document.getElementById("Operator").classList.toggle("Operation"); //once it applies once it doesnot..
+
+	//console.log(operation);oper
+
+	var results = 0;
+
+	var flag = 0;
+
+
 
 	if(operation.localeCompare("*")===0)
 	{
-		value = num1*num2;
+		results = num1*num2;
 	}
 	else if(operation.localeCompare("-")===0)
 	{
-		value = num1-num2;
+		results = num1-num2;
 	}
 	else if(operation.localeCompare("/")===0)
 	{
 		if(num2===0)
 		{
-			value = "Division by Zero Not possible";
+			results = "Division by Zero Not possible";
+			flag = 1;
+
+			result.style.width = "250px";
 		}
 		else
-		value = num1/num2;
+		results = num1/num2;
 	}
 	else if(operation.localeCompare("%")===0)
 	{
-		value = num1%num2;
+		results = num1%num2;
 	}
 	else if(operation.localeCompare("+")===0)
 	{
-		value = (num1 + num2);
+		results = (num1 + num2);
 	}
 	else if(operation.localeCompare("^")===0)
 	{
-		value = Math.pow(num1,num2);
+		results = Math.pow(num1,num2);
+
 	}
 	else
 	{
-		document.getElementById('error').innerHTML =  "Enter proper values and operations.";
-		return;
+		document.getElementById('error').innerHTML =  "Enter proper resultss and operations.";
+		return;  //results;
 	}
 
 	document.getElementById('error').innerHTML =  "";
 
+	if(flag===1)
+	{
+		classList.add("btn-danger");
+	}
+	else
+	{
+		result.style.width = "150px";
+		classList.add("btn-success");
+	}
 
-	var result = document.getElementById('result');
+
+	result.value = results;
 
 
-	
 
-
-	result.value = value;
-
+	setTimeout(function() {classList.remove("btn-success");classList.remove("btn-danger");}, 1000);
 }
